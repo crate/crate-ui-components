@@ -4,6 +4,10 @@
   "declaration": true,
   "main": "dist/lib.js",
   "module": "dist/lib.es.js",
+  "typings": "dist/index.d.ts",
+  "typescript": {
+    "definition": "dist/index.d.ts"
+  },
   "files": [
     "dist"
   ],
