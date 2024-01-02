@@ -1,6 +1,6 @@
 {
   "name": "@crate/crate-ui-components",
-  "version": "0.1.14",
+  "version": "0.1.15",
   "declaration": true,
   "main": "dist/lib.js",
   "module": "dist/lib.es.js",
