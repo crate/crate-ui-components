@@ -51,6 +51,7 @@ const config = {
       plugins: [tailwindcss(tailwindConfig)],
     }),
   ],
+  external: ["react", "react-dom"],
 };
 
 export default config;
