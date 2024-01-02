@@ -28,11 +28,7 @@ const config = {
     del({ targets: "dist/*" }),
     peerDepsExternal(),
     resolve({ extensions: [".js", ".jsx", ".ts", ".tsx"] }),
-    babel({
-      babelHelpers: "bundled",
-      presets: [["@babel/preset-react", { runtime: "automatic" }]],
-      extensions: [".js", ".jsx", ".ts", ".tsx"],
-    }),
+    babel(),
     commonjs(),
     typescript({
       tsconfig: "tsconfig.build.json",
