@@ -45,6 +45,7 @@ const config = {
       },
       extensions: [".css"],
       minimize: true,
+      modules: true,
       inject: {
         insertAt: "top",
       },
