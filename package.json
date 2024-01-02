@@ -1,12 +1,15 @@
 {
   "name": "crate-ui-components",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.1.1",
   "main": "build/lib.js",
   "module": "build/lib.es.js",
   "files": [
     "build"
   ],
+  "repository": "git://github.com/crate/crate-ui-components.git",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "dependencies": {
     "classnames": "^2.5.1",
     "react": "^18.2.0",
