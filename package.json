@@ -1,5 +1,5 @@
 {
-  "name": "crate-ui-components",
+  "name": "@crate/crate-ui-components",
   "version": "0.1.2",
   "main": "build/lib.js",
   "module": "build/lib.es.js",
