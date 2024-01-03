@@ -1,9 +1,9 @@
-import React, { PropsWithChildren } from "react";
-import { render as rtlRender } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
+import React, { PropsWithChildren } from 'react';
+import { render as rtlRender } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
-const render = (ui: React.ReactElement, { locale = "en", ...options } = {}) => {
-  // eslint-disable-next-line react/prop-types
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const render = (ui: React.ReactElement, { locale = 'en', ...options } = {}) => {
   const TestWrapper = ({ children }: PropsWithChildren) => {
     return <main>{children}</main>;
   };
@@ -11,11 +11,8 @@ const render = (ui: React.ReactElement, { locale = "en", ...options } = {}) => {
   return rtlRender(ui, { wrapper: TestWrapper, ...options });
 };
 
-const render2 = (
-  ui: React.ReactElement,
-  { locale = "en", ...options } = {}
-) => {
-  // eslint-disable-next-line react/prop-types
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const render2 = (ui: React.ReactElement, { locale = 'en', ...options } = {}) => {
   const TestWrapper = ({ children }: PropsWithChildren) => {
     return <main>{children}</main>;
   };
@@ -27,7 +24,7 @@ const render2 = (
 };
 
 // re-export everything
-export * from "@testing-library/react";
+export * from '@testing-library/react';
 
 // override render method
 export { render, render2 };

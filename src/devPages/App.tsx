@@ -1,5 +1,5 @@
-import { Button, Loader, Text } from "../components";
-import Section from "./Section/Section";
+import { Button, Loader, Text } from '../components';
+import Section from './Section/Section';
 
 function App() {
   return (
