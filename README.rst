@@ -44,7 +44,7 @@ This process can also be automated with a GitHub action.
 
 Configuring `.npmrc` file
 =========================
-Create a `.npmrc` file in the root of the project with the following content::
+Create a `.npmrc` file in the root of the project with the following content and just update the GITHUB_TOKEN::
 
-  @GITHUB_USERNAME:registry=https://npm.pkg.github.com/YOUR_USERNAME
+  @GITHUB_USERNAME:registry=https://npm.pkg.github.com/crate
   //npm.pkg.github.com/:_authToken=GITHUB_TOKEN
