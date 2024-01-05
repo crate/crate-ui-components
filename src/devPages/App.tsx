@@ -5,9 +5,9 @@ function App() {
   return (
     <div className="w-full flex flex-col justify-center">
       <Section title="Buttons">
-        <Button kind={Button.kinds.PRIMARY}>Primary Button</Button>
-        <Button kind={Button.kinds.SECONDARY}>Secondary Button</Button>
-        <Button kind={Button.kinds.TERTIARY}>Tertiary Button</Button>
+        <Button kind="primary">Primary Button</Button>
+        <Button kind="secondary">Secondary Button</Button>
+        <Button kind="tertiary">Tertiary Button</Button>
         <Button loading>Loading Button</Button>
       </Section>
 

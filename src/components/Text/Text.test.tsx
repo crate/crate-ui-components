@@ -1,12 +1,11 @@
-import React from 'react';
 import { render } from '../../../test/testUtils';
-import Text from './Text';
+import Text, { TextProps } from './Text';
 
-const defaultProps = {
+const defaultProps: TextProps = {
   children: 'the Text value',
 };
 
-const setup = props => {
+const setup = (props: Partial<TextProps> = {}) => {
   const combinedProps = { ...defaultProps, ...props };
 
   return render(<Text {...combinedProps} />);
@@ -21,7 +20,6 @@ describe('The Text component', () => {
 
   it('displays the text as a div element by default', () => {
     const { getByText } = setup({
-      displayAs: null,
       children: 'this is a div element',
     });
 
@@ -30,7 +28,7 @@ describe('The Text component', () => {
 
   it('supports displaying the text as a P element', () => {
     const { getByText } = setup({
-      displayAs: Text.elements.p,
+      displayAs: 'p',
       children: 'this is a p element',
     });
 
@@ -39,7 +37,7 @@ describe('The Text component', () => {
 
   it('supports displaying the text as a span element', () => {
     const { getByText } = setup({
-      displayAs: Text.elements.span,
+      displayAs: 'span',
       children: 'this is a span element',
     });
 

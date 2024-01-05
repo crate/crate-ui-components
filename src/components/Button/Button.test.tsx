@@ -1,14 +1,13 @@
-import React from 'react';
 import { fireEvent, render } from '../../../test/testUtils';
-import Button from './Button';
+import Button, { ButtonProps } from './Button';
 
 const onClickSpy = jest.fn();
 
-const defaultProps = {
+const defaultProps: ButtonProps = {
   onClick: onClickSpy,
   children: 'click me',
 };
-const setup = props => {
+const setup = (props: Partial<ButtonProps> = {}) => {
   const combinedProps = { ...defaultProps, ...props };
 
   return render(<Button {...combinedProps} />);
@@ -105,7 +104,7 @@ describe('The Button component', () => {
     it('displays the border as white for primary buttons', () => {
       const { getByRole } = setup({
         ghost: true,
-        kind: Button.kinds.PRIMARY,
+        kind: 'primary',
       });
 
       expect(getByRole('button')).toHaveClass('border-neutral-100');
@@ -114,7 +113,7 @@ describe('The Button component', () => {
     it('displays the border as white on hover for secondary disabled buttons', () => {
       const { getByRole } = setup({
         ghost: true,
-        kind: Button.kinds.SECONDARY,
+        kind: 'secondary',
       });
 
       expect(getByRole('button')).toHaveClass('hover:border-neutral-100');
@@ -124,7 +123,7 @@ describe('The Button component', () => {
       const { getByRole } = setup({
         disabled: true,
         ghost: true,
-        kind: Button.kinds.SECONDARY,
+        kind: 'secondary',
       });
 
       expect(getByRole('button')).toHaveClass('border-neutral-100');
@@ -135,7 +134,7 @@ describe('The Button component', () => {
     it('displays the background as red for primary buttons', () => {
       const { getByRole } = setup({
         warn: true,
-        kind: Button.kinds.PRIMARY,
+        kind: 'primary',
       });
 
       expect(getByRole('button')).toHaveClass('bg-red-400');
@@ -144,7 +143,7 @@ describe('The Button component', () => {
     it('displays the text as red for primary buttons', () => {
       const { getByRole } = setup({
         warn: true,
-        kind: Button.kinds.SECONDARY,
+        kind: 'secondary',
       });
 
       expect(getByRole('button')).toHaveClass('text-red-400');
