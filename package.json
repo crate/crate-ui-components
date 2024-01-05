@@ -1,30 +1,37 @@
 {
-  "name": "@crate/crate-ui-components",
-  "version": "0.1.16",
-  "declaration": true,
-  "main": "dist/lib.js",
-  "module": "dist/lib.es.js",
-  "typings": "dist/src/lib.d.ts",
-  "typescript": {
-    "definition": "dist/src/lib.d.ts"
+  "name": "@crate.io/crate-ui-components",
+  "version": "0.1.18",
+  "author": "crate.io",
+  "private": false,
+  "type": "module",
+  "main": "dist/index.umd.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.es.js",
+      "export": "./dist/index.umd.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./style.css": "./dist/style.css"
   },
   "files": [
-    "dist"
+    "./dist"
   ],
   "repository": "git://github.com/crate/crate-ui-components.git",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "access": "public"
   },
   "dependencies": {
     "classnames": "^2.5.1",
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "react-dom": "^18.2.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "rollup -c --bundleConfigAsCjs",
+    "start": "vite",
+    "build": "tsc && vite build",
+    "prepare": "yarn run build",
     "test": "jest",
     "lint": "eslint --ext=.ts --ext=.tsx src/"
   },
@@ -47,33 +54,33 @@
     ]
   },
   "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "@rollup/plugin-babel": "^6.0.4",
-    "@rollup/plugin-commonjs": "^25.0.7",
-    "@rollup/plugin-node-resolve": "^15.2.3",
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
+    "@testing-library/jest-dom": "^6.2.0",
+    "@testing-library/react": "^14.1.2",
     "@testing-library/user-event": "^14.5.1",
     "@types/jest": "^29.5.11",
-    "@types/node": "^16.18.69",
+    "@types/node": "^20.10.6",
     "@types/react": "^18.2.46",
     "@types/react-dom": "^18.2.18",
     "@typescript-eslint/eslint-plugin": "^6.17.0",
     "@typescript-eslint/parser": "^6.17.0",
+    "@vitejs/plugin-react-swc": "^3.5.0",
+    "autoprefixer": "^10.4.16",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.1.2",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
+    "postcss": "^8.4.32",
     "prettier": "^3.1.1",
-    "rollup": "^4.9.1",
-    "rollup-plugin-delete": "^2.0.0",
-    "rollup-plugin-peer-deps-external": "^2.2.4",
-    "rollup-plugin-postcss": "^4.0.2",
-    "rollup-plugin-typescript2": "^0.36.0",
     "tailwindcss": "^3.4.0",
     "ts-jest": "^29.1.1",
-    "typescript": "^4.9.5"
+    "typescript": "^5.3.3",
+    "vite": "^5.0.8",
+    "vite-plugin-dts": "^3.7.0"
   },
   "peerDependencies": {
     "react": "^18.2.0",

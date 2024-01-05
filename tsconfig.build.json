@@ -1,9 +1,9 @@
+/* 
+    This tsconfig file is used only for build 
+    and it extends the standard tsconfig
+    overriding some settings.
+*/
 {
-  "extends": "./tsconfig",
-  "compilerOptions": {
-    "outDir": "dist",
-    "declarationDir": "dist",
-    "declaration": true
-  },
-  "exclude": ["node_modules", "dist", "build"]
+  "extends": "./tsconfig.json",
+  "exclude": ["src/devPages", "test", "**/*.test.{js,ts,jsx,tsx}"]
 }

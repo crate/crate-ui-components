@@ -1,9 +1,9 @@
-module.exports = {
+export default {
   bail: false,
-  preset: "ts-jest/presets/js-with-ts",
-  rootDir: ".",
-  testRegex: "(/__tests__/*.test.js|\\.(test))\\.(jsx|js|tsx|ts)$",
-  moduleFileExtensions: ["jsx", "js", "tsx", "ts", "json"],
+  preset: 'ts-jest/presets/js-with-ts',
+  rootDir: '.',
+  testRegex: '(/__tests__/*.test.js|\\.(test))\\.(jsx|js|tsx|ts)$',
+  moduleFileExtensions: ['jsx', 'js', 'tsx', 'ts', 'json'],
   collectCoverage: false,
   coverageThreshold: {
     global: {
@@ -14,28 +14,25 @@ module.exports = {
     },
   },
   collectCoverageFrom: [
-    "src/**/*.{js,jsx,ts,tsx}",
-    "!src/index.js",
-    "!src/index.ts",
-    "!src/lib.ts",
+    'src/**/*.{js,jsx,ts,tsx}',
+    '!src/index.js',
+    '!src/index.ts',
+    '!src/lib.ts',
   ],
   moduleNameMapper: {
-    ".+\\.(css|less|sass|scss)$": "identity-obj-proxy",
-    "\\.(svg|png)$": "<rootDir>/test/__mocks__/empty-module.js",
-    "react-syntax-highlighter/dist/esm/styles/hljs": "identity-obj-proxy",
+    '.+\\.(css|less|sass|scss)$': 'identity-obj-proxy',
+    '\\.(svg|png)$': '<rootDir>/test/__mocks__/empty-module.js',
+    'react-syntax-highlighter/dist/esm/styles/hljs': 'identity-obj-proxy',
   },
-  testEnvironment: "jsdom",
+  testEnvironment: 'jsdom',
   transform: {
-    "^.+\\.jsx?$": "ts-jest",
-    "^.+\\.tsx?$": "ts-jest",
+    '^.+\\.jsx?$': 'ts-jest',
+    '^.+\\.tsx?$': 'ts-jest',
   },
   transformIgnorePatterns: [
-    "/node_modules/(?!intl-messageformat|intl-messageformat-parser).+\\.js$",
-    "node_modules/(?!troublesome-dependency/.*)",
+    '/node_modules/(?!intl-messageformat|intl-messageformat-parser).+\\.js$',
+    'node_modules/(?!troublesome-dependency/.*)',
   ],
-  setupFilesAfterEnv: [
-    "<rootDir>/test/setup.ts",
-    "@testing-library/jest-dom/extend-expect",
-  ],
-  globalSetup: "./test/global-setup.ts",
+  setupFilesAfterEnv: ['<rootDir>/test/setup.ts'],
+  globalSetup: './test/global-setup.ts',
 };

@@ -1,7 +1,8 @@
-import "@testing-library/jest-dom";
+/// <reference types="@types/jest" />;
+import '@testing-library/jest-dom';
 
 // required for testing Ant Design 4
-global.window.matchMedia = (query) => ({
+global.window.matchMedia = query => ({
   matches: false,
   media: query,
   onchange: null,
