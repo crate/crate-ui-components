@@ -1,12 +1,12 @@
-import React from 'react';
 import { render } from '../../../test/testUtils';
-import Loader from './Loader';
+import Loader, { LoaderProps } from './Loader';
+import { LOADER_COLORS, LOADER_SIZES } from './constants';
 
-const defaultProps = {
-  size: Loader.sizes.MEDIUM,
-  color: Loader.colors.PRIMARY,
+const defaultProps: LoaderProps = {
+  size: 'medium',
+  color: 'primary',
 };
-const setup = props => {
+const setup = (props: Partial<LoaderProps> = {}) => {
   const combinedProps = { ...defaultProps, ...props };
 
   return render(<Loader {...combinedProps} />);
@@ -20,21 +20,21 @@ describe('The Loader component', () => {
   });
 
   it('displays the loader at the correct size', () => {
-    const { getByRole } = setup({ size: Loader.sizes.LARGE });
+    const { getByRole } = setup({ size: 'large' });
 
-    expect(getByRole('alert').firstElementChild.getAttribute('height')).toBe(
-      `${Loader.sizes.LARGE}`,
+    expect(getByRole('alert').firstElementChild!.getAttribute('height')).toBe(
+      `${LOADER_SIZES.large}`,
     );
-    expect(getByRole('alert').firstElementChild.getAttribute('width')).toBe(
-      `${Loader.sizes.LARGE}`,
+    expect(getByRole('alert').firstElementChild!.getAttribute('width')).toBe(
+      `${LOADER_SIZES.large}`,
     );
   });
 
   it('displays the loader in the correct color', () => {
-    const { getByRole } = setup({ color: Loader.colors.SECONDARY });
+    const { getByRole } = setup({ color: 'secondary' });
 
-    expect(getByRole('alert').firstElementChild.classList).toContain(
-      Loader.colors.SECONDARY,
+    expect(getByRole('alert').firstElementChild!.classList).toContain(
+      LOADER_COLORS.secondary,
     );
   });
 

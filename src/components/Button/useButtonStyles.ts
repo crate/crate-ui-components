@@ -1,6 +1,16 @@
 import { useMemo } from 'react';
 import cx from 'classnames';
-import { BUTTON_KINDS, BUTTON_SIZES } from './constants';
+import { ButtonKind, ButtonSize } from './Button';
+
+type UseButtonStylesProps = {
+  className?: string;
+  disabled?: boolean;
+  ghost?: boolean;
+  kind?: ButtonKind;
+  loading?: boolean;
+  size?: ButtonSize;
+  warn?: boolean;
+};
 
 // This hook was developed as a convenient way of sharing button
 // styles with non-button HTML elements in AccessCluster.jsx
@@ -12,20 +22,20 @@ import { BUTTON_KINDS, BUTTON_SIZES } from './constants';
 // The expectation is that when a button is seen, it has button-like behaviour, so this hook is realy a workaround
 // to support the AccessCluster.jsx use case.
 function useButtonStyles({
-  className,
+  className = '',
   disabled = false,
   ghost = false,
-  kind = BUTTON_KINDS.PRIMARY,
+  kind = 'primary',
   loading = false,
-  size = BUTTON_SIZES.REGULAR,
+  size = 'regular',
   warn = false,
-}) {
+}: UseButtonStylesProps) {
   const buttonClasses = useMemo(() => {
-    const sizeIsSmall = size === BUTTON_SIZES.SMALL;
-    const sizeIsRegular = size === BUTTON_SIZES.REGULAR;
-    const kindIsPrimary = kind === BUTTON_KINDS.PRIMARY;
-    const kindIsSecondary = kind === BUTTON_KINDS.SECONDARY;
-    const kindIsTertiary = kind === BUTTON_KINDS.TERTIARY;
+    const sizeIsSmall = size === 'small';
+    const sizeIsRegular = size === 'regular';
+    const kindIsPrimary = kind === 'primary';
+    const kindIsSecondary = kind === 'secondary';
+    const kindIsTertiary = kind === 'tertiary';
     const loadingOrDisabled = disabled || loading;
 
     return cx(
