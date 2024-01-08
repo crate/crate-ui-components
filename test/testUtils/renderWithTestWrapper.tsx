@@ -2,18 +2,11 @@ import React, { PropsWithChildren } from 'react';
 import { RenderResult, render as rtlRender } from '@testing-library/react';
 import userEvent, { UserEvent } from '@testing-library/user-event';
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const render = (ui: React.ReactElement, { locale = 'en', ...options } = {}): RenderResult => {
-  const TestWrapper = ({ children }: PropsWithChildren) => {
-    return <main>{children}</main>;
-  };
-
-  return rtlRender(ui, { wrapper: TestWrapper, ...options });
-};
-
-
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const render2 = (ui: React.ReactElement, { locale = 'en', ...options } = {}): RenderResult & {user: UserEvent} => {
+const render = (
+  ui: React.ReactElement,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  { locale = 'en', ...options } = {},
+): RenderResult & { user: UserEvent } => {
   const TestWrapper = ({ children }: PropsWithChildren) => {
     return <main>{children}</main>;
   };
@@ -22,7 +15,7 @@ const render2 = (ui: React.ReactElement, { locale = 'en', ...options } = {}): Re
     user: userEvent.setup(),
     ...rtlRender(ui, { wrapper: TestWrapper, ...options }),
   };
-  
+
   return renderResult;
 };
 
@@ -30,4 +23,4 @@ const render2 = (ui: React.ReactElement, { locale = 'en', ...options } = {}): Re
 export * from '@testing-library/react';
 
 // override render method
-export { render, render2 };
+export { render };
