@@ -4,6 +4,30 @@ Create UI Components
 
 The ``Create UI Components`` is a collection of React components that are used in Crate React applications.
 
+Use this Library
+==================
+To use this library you have to run the following command::
+
+  npm install @crate.io/crate-ui-components
+
+or, if using ``yarn``::
+
+  yarn add @crate.io/crate-ui-components
+
+Then, if you are using tailwind, edit your ``tailwind.config`` file and add the following::
+
+  ...
+  content: [
+    ...
+    './node_modules/@crate.io/crate-ui-components/**/*.{js,jsx,ts,tsx}'
+  ]
+  ...
+
+and edit your index.css to import library style::
+
+  @import '@crate.io/crate-ui-components/style.css';
+
+
 Core Technology
 ==================
 
@@ -13,16 +37,14 @@ This library uses
 - `Ant Design System`_ A design system of UI components to accelerate the UI development
 - `Tailwind CSS`_ A fast, flexible, and reliable CSS library
 
-
-Local Installation
+Local Development
 ==================
 Install the required Node JS version to run the application.
 
 For nvm users::
   nvm use
 
-Otherwise check the ``.nvmrc`` file to see the current Node JS version required
-and install using whichever method you prefer.
+Otherwise check the ``.nvmrc`` file to see the current Node JS version required and install using whichever method you prefer.
 
 Install the required dependencies::
 
@@ -34,17 +56,10 @@ Start the development server::
 
 Publish a newer version
 =======================
-To publish a new version of the library you need to:
+To publish a new version of the library you need to
 
-1. configure the `.npmrc` file
-2. run `yarn build` to properly build the library
-3. run `yarn publish` and type the new version number
+1. be part of ``@crate.io`` organization on npm
+2. run ``yarn publish`` and type the new version number
+3. push ``package.json`` file (version update)
 
 This process can also be automated with a GitHub action.
-
-Configuring `.npmrc` file
-=========================
-Create a `.npmrc` file in the root of the project with the following content and just update the GITHUB_TOKEN::
-
-  @GITHUB_USERNAME:registry=https://npm.pkg.github.com/crate
-  //npm.pkg.github.com/:_authToken=GITHUB_TOKEN
