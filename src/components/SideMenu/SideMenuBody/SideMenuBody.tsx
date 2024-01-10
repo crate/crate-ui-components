@@ -11,7 +11,9 @@ function SideMenuBody({ items = [], selectedKeys = [] }: SideMenuBodyProps) {
   const { mode, theme } = useThemedMenu();
 
   return (
-    <Menu mode={mode} selectedKeys={selectedKeys} theme={theme} items={items} />
+    <div className="w-full">
+      <Menu mode={mode} selectedKeys={selectedKeys} theme={theme} items={items} />
+    </div>
   );
 }
 
