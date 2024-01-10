@@ -1,10 +1,9 @@
 import { render, screen } from '../../../test/testUtils';
 import Loader, { LoaderProps } from './Loader';
-import { LOADER_COLORS, LOADER_SIZES } from './constants';
 
 const defaultProps: LoaderProps = {
-  size: 'medium',
-  color: 'primary',
+  size: Loader.sizes.SMALL,
+  color: Loader.colors.PRIMARY,
 };
 const setup = (props: Partial<LoaderProps> = {}) => {
   const combinedProps = { ...defaultProps, ...props };
@@ -21,22 +20,22 @@ describe('The Loader component', () => {
 
   it('displays the loader at the correct size', () => {
     setup({
-      size: 'large',
+      size: Loader.sizes.LARGE,
     });
 
     expect(screen.getByRole('alert').firstElementChild!.getAttribute('height')).toBe(
-      `${LOADER_SIZES.large}`,
+      `${Loader.sizes.LARGE}`,
     );
     expect(screen.getByRole('alert').firstElementChild!.getAttribute('width')).toBe(
-      `${LOADER_SIZES.large}`,
+      `${Loader.sizes.LARGE}`,
     );
   });
 
   it('displays the loader in the correct color', () => {
-    setup({ color: 'secondary' });
+    setup({ color: Loader.colors.SECONDARY });
 
     expect(screen.getByRole('alert').firstElementChild!.classList).toContain(
-      LOADER_COLORS.secondary,
+      Loader.colors.SECONDARY,
     );
   });
 

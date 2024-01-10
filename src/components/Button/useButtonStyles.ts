@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import cx from 'classnames';
 import { ButtonKind, ButtonSize } from './Button';
+import { BUTTON_KINDS, BUTTON_SIZES } from './ButtonConstants';
 
 type UseButtonStylesProps = {
   className?: string;
@@ -25,17 +26,17 @@ function useButtonStyles({
   className = '',
   disabled = false,
   ghost = false,
-  kind = 'primary',
+  kind = BUTTON_KINDS.PRIMARY,
   loading = false,
-  size = 'regular',
+  size = BUTTON_SIZES.REGULAR,
   warn = false,
 }: UseButtonStylesProps) {
   const buttonClasses = useMemo(() => {
-    const sizeIsSmall = size === 'small';
-    const sizeIsRegular = size === 'regular';
-    const kindIsPrimary = kind === 'primary';
-    const kindIsSecondary = kind === 'secondary';
-    const kindIsTertiary = kind === 'tertiary';
+    const sizeIsSmall = size === BUTTON_SIZES.SMALL;
+    const sizeIsRegular = size === BUTTON_SIZES.REGULAR;
+    const kindIsPrimary = kind === BUTTON_KINDS.PRIMARY;
+    const kindIsSecondary = kind === BUTTON_KINDS.SECONDARY;
+    const kindIsTertiary = kind === BUTTON_KINDS.TERTIARY;
     const loadingOrDisabled = disabled || loading;
 
     return cx(

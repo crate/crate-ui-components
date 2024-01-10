@@ -45,7 +45,7 @@ function TopBar({ backButton, dropdownLabel, dropdownMenu }: TopBarProps) {
 
   return (
     <div className={styles}>
-      <div className="flex flex-row-reverse h-full items-center justify-between px-4 md:px-10">
+      <div className="flex flex-row-reverse h-full items-center justify-between px-4 md:px-10 w-full">
         <Dropdown
           placement="bottomRight"
           trigger={['click']}

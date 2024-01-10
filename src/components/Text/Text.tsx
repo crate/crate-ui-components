@@ -1,9 +1,10 @@
 import React from 'react';
 import cx from 'classnames';
+import { TEXT_ELEMENTS } from './TextConstants';
 
 export type TextProps = {
   className?: string;
-  displayAs?: 'div' | 'span' | 'p';
+  displayAs?: ValueOf<typeof TEXT_ELEMENTS>;
   pale?: boolean;
   truncate?: boolean;
   children: React.ReactNode;
@@ -13,7 +14,7 @@ export type TextProps = {
 
 function Text({
   className = '',
-  displayAs = 'div',
+  displayAs = TEXT_ELEMENTS.DIV,
   pale = false,
   truncate = false,
   children,
@@ -36,5 +37,7 @@ function Text({
     children,
   );
 }
+
+Text.elements = TEXT_ELEMENTS;
 
 export default Text;

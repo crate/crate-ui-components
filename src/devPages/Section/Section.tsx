@@ -12,7 +12,7 @@ export default function Section({
   children,
 }: PropsWithChildren<SectionProps>) {
   return (
-    <div className="w-full border p-4 m-2 flex flex-col gap-4 bg-white">
+    <div className="w-full border p-4 mt-2 flex flex-col gap-4 bg-white">
       <h6 className="font-bold text-xl">{title}</h6>
       <div
         className={cx(

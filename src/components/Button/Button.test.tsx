@@ -111,7 +111,7 @@ describe('The Button component', () => {
     it('displays the border as white for primary buttons', () => {
       setup({
         ghost: true,
-        kind: 'primary',
+        kind: Button.kinds.PRIMARY,
       });
 
       expect(screen.getByRole('button')).toHaveClass('border-neutral-100');
@@ -120,7 +120,7 @@ describe('The Button component', () => {
     it('displays the border as white on hover for secondary disabled buttons', () => {
       setup({
         ghost: true,
-        kind: 'secondary',
+        kind: Button.kinds.SECONDARY,
       });
 
       expect(screen.getByRole('button')).toHaveClass('hover:border-neutral-100');
@@ -130,7 +130,7 @@ describe('The Button component', () => {
       setup({
         disabled: true,
         ghost: true,
-        kind: 'secondary',
+        kind: Button.kinds.SECONDARY,
       });
 
       expect(screen.getByRole('button')).toHaveClass('border-neutral-100');
@@ -141,7 +141,7 @@ describe('The Button component', () => {
     it('displays the background as red for primary buttons', () => {
       setup({
         warn: true,
-        kind: 'primary',
+        kind: Button.kinds.PRIMARY,
       });
 
       expect(screen.getByRole('button')).toHaveClass('bg-red-400');
@@ -150,7 +150,7 @@ describe('The Button component', () => {
     it('displays the text as red for primary buttons', () => {
       setup({
         warn: true,
-        kind: 'secondary',
+        kind: Button.kinds.SECONDARY,
       });
 
       expect(screen.getByRole('button')).toHaveClass('text-red-400');

@@ -2,10 +2,11 @@
 import React, { useMemo } from 'react';
 import Loader from '../Loader/Loader';
 import useButtonStyles from './useButtonStyles';
+import { BUTTON_INPUT_TYPES, BUTTON_KINDS, BUTTON_SIZES } from './ButtonConstants';
 
-export type ButtonKind = 'primary' | 'secondary' | 'tertiary';
-export type ButtonSize = 'regular' | 'small';
-export type ButtonType = 'button' | 'submit' | 'reset';
+export type ButtonKind = ValueOf<typeof BUTTON_KINDS>;
+export type ButtonSize = ValueOf<typeof BUTTON_SIZES>;
+export type ButtonType = ValueOf<typeof BUTTON_INPUT_TYPES>;
 
 export type ButtonProps = {
   /** Aria controls - receives id for the controlled region */
@@ -42,11 +43,11 @@ function Button({
   form,
   ghost = false,
   id,
-  kind = 'primary',
+  kind = BUTTON_KINDS.PRIMARY,
   loading = false,
   onClick,
-  size = 'regular',
-  type = 'button',
+  size = BUTTON_SIZES.REGULAR,
+  type = BUTTON_INPUT_TYPES.BUTTON,
   warn = false,
 }: ButtonProps) {
   const buttonClasses = useButtonStyles({
@@ -93,9 +94,13 @@ function Button({
   return (
     <button {...buttonProps}>
       <span>{children}</span>
-      {loading && <Loader className="ml-2" size="small" />}
+      {loading && <Loader className="ml-2" size={Loader.sizes.SMALL} />}
     </button>
   );
 }
+
+Button.sizes = BUTTON_SIZES;
+Button.types = BUTTON_INPUT_TYPES;
+Button.kinds = BUTTON_KINDS;
 
 export default Button;

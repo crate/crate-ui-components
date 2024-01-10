@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useIntl } from 'react-intl';
 import NoDataView from '../NoDataView';
 import { RenderExpandIcon } from 'rc-table/lib/interface';
+import { Button } from '..';
 
 type TablePropsType<RecordType extends object> = React.ComponentProps<
   typeof Table<RecordType>
@@ -77,7 +78,7 @@ function CrateTable<RecordType extends object>({
       <button
         className="cursor-pointer duration-200 h-[17px] mr-2.5 p-0 text-neutral-400 transition w-[17px] hover:border-crate-blue hover:text-crate-blue"
         onClick={event => onExpand(record, event)}
-        type="button"
+        type={Button.types.BUTTON}
       >
         {expanded ? '−' : '+'}
       </button>

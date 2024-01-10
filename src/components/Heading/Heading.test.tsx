@@ -3,7 +3,7 @@ import Heading, { HeadingProps } from './Heading';
 
 const defaultProps: HeadingProps = {
   children: 'the heading value',
-  level: 'h1',
+  level: Heading.levels.h1,
 };
 
 const setup = (props: Partial<HeadingProps> = {}) => {
@@ -21,7 +21,7 @@ describe('The Heading component', () => {
 
   it('displays the text within the heading level passed as level', () => {
     setup({
-      level: 'h2',
+      level: Heading.levels.h2,
       children: 'this is an H2',
     });
 
@@ -30,7 +30,7 @@ describe('The Heading component', () => {
 
   it('allows a heading level to be displayed with styles of a different heading level', () => {
     setup({
-      level: 'h2',
+      level: Heading.levels.h2,
       children: 'this is an H2',
       displayAs: 'h3',
     });
@@ -42,7 +42,7 @@ describe('The Heading component', () => {
 
   it('displays the heading in a bold font weight (700) by default', () => {
     setup({
-      level: 'h2',
+      level: Heading.levels.h2,
       children: 'this is a black H2',
       light: false,
     });
@@ -54,7 +54,7 @@ describe('The Heading component', () => {
 
   it('supports displaying the heading in a lighter font weight', () => {
     setup({
-      level: 'h2',
+      level: Heading.levels.h2,
       children: 'this is a light H2',
       light: true,
     });
