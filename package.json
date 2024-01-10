@@ -36,7 +36,9 @@
     "build": "tsc && vite build",
     "prepare": "yarn run build",
     "test": "jest",
-    "lint": "eslint --ext=.ts --ext=.tsx src/"
+    "lint": "eslint --ext=.ts --ext=.tsx src/",
+    "link-local": "yarn link && cd node_modules/react && yarn link && cd ../react-dom && yarn link",
+    "unlink-local": "yarn unlink && cd node_modules/react && yarn unlink && cd ../react-dom && yarn unlink"
   },
   "eslintConfig": {
     "extends": [
