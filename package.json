@@ -24,9 +24,12 @@
     "access": "public"
   },
   "dependencies": {
+    "antd": "^4.24.14",
     "classnames": "^2.5.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-intl": "^6.5.5",
+    "react-router-dom": "^6.21.1"
   },
   "scripts": {
     "start": "vite",
@@ -74,6 +77,7 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
+    "less": "^4.2.0",
     "postcss": "^8.4.32",
     "prettier": "^3.1.1",
     "tailwindcss": "^3.4.0",

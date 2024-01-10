@@ -1,22 +1,10 @@
-import { Button, Loader, Text } from '../components';
 import Section from './Section/Section';
 
 function App() {
   return (
-    <div className="w-full flex flex-col justify-center">
+    <div className="w-full flex flex-col justify-center p-2">
       <Section title="Buttons">
-        <Button kind="primary">Primary Button</Button>
-        <Button kind="secondary">Secondary Button</Button>
-        <Button kind="tertiary">Tertiary Button</Button>
-        <Button loading>Loading Button</Button>
-      </Section>
-
-      <Section title="Loaders">
-        <Loader />
-      </Section>
-
-      <Section title="Texts">
-        <Text>Example Text</Text>
+        This project is a collection of UI components for @crate.
       </Section>
     </div>
   );
