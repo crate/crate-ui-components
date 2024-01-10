@@ -3,34 +3,40 @@ import { LoadingOutlined } from '@ant-design/icons';
 import { useState } from 'react';
 import { useIntl } from 'react-intl';
 import NoDataView from '../NoDataView';
-import { AnyObject } from 'antd/es/_util/type';
 import { RenderExpandIcon } from 'rc-table/lib/interface';
 
-type TablePropsType = React.ComponentProps<typeof Table>;
-type TableColumnsType = TablePropsType['columns'];
-type TableSizeType = TablePropsType['size'];
-type TableScrollType = TablePropsType['scroll'];
-type TableExpandableType = TablePropsType['expandable'];
-type TablePaginationType = TablePropsType['pagination'];
-type TableSummaryType = TablePropsType['summary'];
+type TablePropsType<RecordType extends object> = React.ComponentProps<
+  typeof Table<RecordType>
+>;
+type TableColumnsType<RecordType extends object> =
+  TablePropsType<RecordType>['columns'];
+type TableSizeType<RecordType extends object> = TablePropsType<RecordType>['size'];
+type TableScrollType<RecordType extends object> =
+  TablePropsType<RecordType>['scroll'];
+type TableExpandableType<RecordType extends object> =
+  TablePropsType<RecordType>['expandable'];
+type TablePaginationType<RecordType extends object> =
+  TablePropsType<RecordType>['pagination'];
+type TableSummaryType<RecordType extends object> =
+  TablePropsType<RecordType>['summary'];
 type UnaryFunction<RecordType, ReturnType> = (el: RecordType) => ReturnType;
 
-export type CrateTableProps<RecordType> = {
-  columns: TableColumnsType;
+export type CrateTableProps<RecordType extends object> = {
+  columns: TableColumnsType<RecordType>;
   dataSource?: readonly RecordType[];
   emptyText?: string;
   rowClassName?: string | UnaryFunction<RecordType, string>;
-  rowKey: keyof RecordType | UnaryFunction<RecordType, string>;
+  rowKey: Extract<keyof RecordType, string> | UnaryFunction<RecordType, string>;
   showHeader?: boolean;
-  size?: TableSizeType;
-  scroll?: TableScrollType;
-  expandable?: TableExpandableType;
-  pagination?: TablePaginationType;
+  size?: TableSizeType<RecordType>;
+  scroll?: TableScrollType<RecordType>;
+  expandable?: TableExpandableType<RecordType>;
+  pagination?: TablePaginationType<RecordType>;
   testId?: string;
-  summary?: TableSummaryType;
+  summary?: TableSummaryType<RecordType>;
 };
 
-function CrateTable<RecordType extends AnyObject>({
+function CrateTable<RecordType extends object>({
   dataSource = [],
   columns,
   rowKey,
@@ -78,7 +84,7 @@ function CrateTable<RecordType extends AnyObject>({
     );
   };
 
-  const handleChange: TablePropsType['onChange'] = (
+  const handleChange: TablePropsType<RecordType>['onChange'] = (
     _pagination,
     _filters,
     _sorter,
