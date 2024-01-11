@@ -65,7 +65,7 @@ function SideMenu({
           </Link>
         </div>
         {/* Body */}
-        <div className="flex">
+        <div className="flex w-full">
           <SideMenuBody items={links} selectedKeys={selectedKeys} />
         </div>
 
