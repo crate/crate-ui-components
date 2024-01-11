@@ -1,7 +1,8 @@
 import React from 'react';
 import cx from 'classnames';
+import { HEADING_LEVELS } from './HeadingConstants';
 
-type HeadingLevel = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+type HeadingLevel = ValueOf<typeof HEADING_LEVELS>;
 export type HeadingProps = {
   className?: string;
   level: HeadingLevel;
@@ -24,12 +25,12 @@ function Heading({
   const displayLevel = displayAs || level;
 
   const classExtensions = {
-    h1: 'text-3xl',
-    h2: 'text-xl',
-    h3: 'text-lg',
-    h4: 'text-base',
-    h5: 'text-sm',
-    h6: 'text-sm',
+    [HEADING_LEVELS.h1]: 'text-3xl',
+    [HEADING_LEVELS.h2]: 'text-xl',
+    [HEADING_LEVELS.h3]: 'text-lg',
+    [HEADING_LEVELS.h4]: 'text-base',
+    [HEADING_LEVELS.h5]: 'text-sm',
+    [HEADING_LEVELS.h6]: 'text-sm',
   };
   const headingClasses = cx(
     { 'font-normal': light, 'font-bold': !light },
@@ -47,5 +48,7 @@ function Heading({
     children,
   );
 }
+
+Heading.levels = HEADING_LEVELS;
 
 export default Heading;

@@ -28,7 +28,7 @@ describe('The Text component', () => {
 
   it('supports displaying the text as a P element', () => {
     setup({
-      displayAs: 'p',
+      displayAs: Text.elements.P,
       children: 'this is a p element',
     });
 
@@ -37,7 +37,7 @@ describe('The Text component', () => {
 
   it('supports displaying the text as a span element', () => {
     setup({
-      displayAs: 'span',
+      displayAs: Text.elements.SPAN,
       children: 'this is a span element',
     });
 

@@ -1,20 +1,24 @@
 import cx from 'classnames';
-import { LOADER_COLORS, LOADER_SIZES } from './constants';
+import {
+  LOADER_ALIGNMENT_OPTIONS,
+  LOADER_COLORS,
+  LOADER_SIZES,
+} from './LoaderConstants';
 import Text from '../Text';
 
 export type LoaderProps = {
-  align?: 'left' | 'center';
+  align?: ValueOf<typeof LOADER_ALIGNMENT_OPTIONS>;
   className?: string;
-  color?: keyof typeof LOADER_COLORS;
+  color?: ValueOf<typeof LOADER_COLORS>;
   message?: React.ReactNode;
-  size?: keyof typeof LOADER_SIZES;
+  size?: ValueOf<typeof LOADER_SIZES>;
 };
 
 function Loader({
   align = 'left',
   color,
   className = '',
-  size = 'medium',
+  size = LOADER_SIZES.MEDIUM,
   message,
 }: LoaderProps) {
   return (
@@ -28,21 +32,16 @@ function Loader({
       title="loading"
     >
       <svg
-        className={cx(
-          'animate-spin',
-          'relative',
-          color ? LOADER_COLORS[color] : '',
-          {
-            block: !message && align === 'center',
-            'm-auto': !message && align === 'center',
-            'mr-2': !!message,
-          },
-        )}
+        className={cx('animate-spin', 'relative', color ?? '', {
+          block: !message && align === 'center',
+          'm-auto': !message && align === 'center',
+          'mr-2': !!message,
+        })}
         fill="none"
         viewBox="0 0 24 24"
         style={{ minWidth: 16, minHeight: 16 }}
-        width={LOADER_SIZES[size]}
-        height={LOADER_SIZES[size]}
+        width={size}
+        height={size}
       >
         <circle
           className="absolute left-1/2 opacity-25 top-1/2"
@@ -63,5 +62,9 @@ function Loader({
     </div>
   );
 }
+
+Loader.alignment = LOADER_ALIGNMENT_OPTIONS;
+Loader.colors = LOADER_COLORS;
+Loader.sizes = LOADER_SIZES;
 
 export default Loader;

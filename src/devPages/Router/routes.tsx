@@ -2,6 +2,7 @@ import App from '../App';
 import { ApartmentOutlined } from '@ant-design/icons';
 import {
   ButtonPage,
+  HeadingsPage,
   LoadersPage,
   NoDataViewsPage,
   TablesPage,
@@ -31,7 +32,7 @@ export const devRoutes: DevRoute[] = [
   },
   {
     path: '/headings',
-    component: <ButtonPage />,
+    component: <HeadingsPage />,
     icon: <ApartmentOutlined />,
     displayName: 'Headings',
   },
