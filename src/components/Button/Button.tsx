@@ -3,6 +3,7 @@ import React, { useMemo } from 'react';
 import Loader from '../Loader/Loader';
 import useButtonStyles from './useButtonStyles';
 import { BUTTON_INPUT_TYPES, BUTTON_KINDS, BUTTON_SIZES } from './ButtonConstants';
+import { ValueOf } from '../../types/utils';
 
 export type ButtonKind = ValueOf<typeof BUTTON_KINDS>;
 export type ButtonSize = ValueOf<typeof BUTTON_SIZES>;

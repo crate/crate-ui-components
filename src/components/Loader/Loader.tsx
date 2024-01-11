@@ -5,6 +5,7 @@ import {
   LOADER_SIZES,
 } from './LoaderConstants';
 import Text from '../Text';
+import { ValueOf } from '../../types/utils';
 
 export type LoaderProps = {
   align?: ValueOf<typeof LOADER_ALIGNMENT_OPTIONS>;

@@ -1,6 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
 import { HEADING_LEVELS } from './HeadingConstants';
+import { ValueOf } from '../../types/utils';
 
 type HeadingLevel = ValueOf<typeof HEADING_LEVELS>;
 export type HeadingProps = {
