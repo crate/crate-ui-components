@@ -6,5 +6,6 @@
     "moduleResolution": "bundler",
     "allowSyntheticDefaultImports": true
   },
-  "include": ["vite.config.ts", "src/constants/colors.ts"]
+  "include": ["vite.config.ts", "src"],
+  "exclude": ["src"]
 }
