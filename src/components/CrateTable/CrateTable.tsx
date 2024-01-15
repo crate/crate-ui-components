@@ -1,7 +1,6 @@
 import { Spin, Table } from 'antd';
 import { LoadingOutlined } from '@ant-design/icons';
 import { useState } from 'react';
-import { useIntl } from 'react-intl';
 import NoDataView from '../NoDataView';
 import { RenderExpandIcon } from 'rc-table/lib/interface';
 import { Button } from '..';
@@ -51,8 +50,6 @@ function CrateTable<RecordType extends object>({
   testId,
   summary,
 }: CrateTableProps<RecordType>) {
-  const { formatMessage } = useIntl();
-
   const [tableEmpty, setTableEmpty] = useState(false);
 
   const showBody = () => {
@@ -95,10 +92,8 @@ function CrateTable<RecordType extends object>({
   };
 
   const getDescriptionOfEmptyTable = () => {
-    if (tableEmpty) return formatMessage({ id: 'crateTable.noResultsFoundText' });
-    return emptyText.length > 0
-      ? emptyText
-      : formatMessage({ id: 'crateTable.defaultEmptyText' });
+    if (tableEmpty) return 'No results found';
+    return emptyText.length > 0 ? emptyText : 'No data';
   };
 
   return (

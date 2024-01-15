@@ -23,19 +23,6 @@ and edit your index.css to import library style:
 
     @import '@crate.io/crate-ui-components/style.css';
 
-You need also to add this to your `react-intl` provider configuration:
-
-    import { rootMessages as crateUiComponentsMessages } from '@crate.io/crate-ui-components';
-
-    const enMessages = {
-        ...crateUiComponentsMessages.en,
-        ...yourMessages.en,
-    };
-
-    ...
-    <IntlProvider ... messages={enMessages}>
-    ...
-
 ## Using @crate.io/crate-ui-components locally
 
 Sometimes you need to be able to develop using the local version instead

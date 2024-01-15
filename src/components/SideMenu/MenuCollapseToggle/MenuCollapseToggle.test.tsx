@@ -1,9 +1,6 @@
 import { render, waitFor, screen } from '../../../../test/testUtils';
 import MenuCollapseToggle from '.';
-import rootMessages from '../../../rootMessages';
 import { MenuCollapseToggleProps } from './MenuCollapseToggle';
-
-const messages = rootMessages.en;
 
 const toggleSideMenuSpy = jest.fn();
 
@@ -40,9 +37,7 @@ describe('The MenuCollapseToggle component', () => {
     setup({ collapsed: true });
 
     await waitFor(() => {
-      expect(
-        screen.getByText(messages['sideMenu.expandMenuButton']),
-      ).toBeInTheDocument();
+      expect(screen.getByText('Expand')).toBeInTheDocument();
     });
   });
 
@@ -50,9 +45,7 @@ describe('The MenuCollapseToggle component', () => {
     setup({ collapsed: false });
 
     await waitFor(() => {
-      expect(
-        screen.getByText(messages['sideMenu.collapseMenuButton']),
-      ).toBeInTheDocument();
+      expect(screen.getByText('Collapse')).toBeInTheDocument();
     });
   });
 
