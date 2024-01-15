@@ -1,8 +1,5 @@
 import { render, screen } from '../../../test/testUtils';
 import NoDataView, { NoDataViewProps } from './NoDataView';
-import rootMessages from '../../rootMessages';
-
-const messages = rootMessages.en;
 
 const defaultProps: NoDataViewProps = {};
 
@@ -24,7 +21,7 @@ describe('The NoDataView component', () => {
       setup();
 
       expect(
-        screen.getByText(messages['noDataView.defaultText']),
+        screen.getByText('There is currently no data to display'),
       ).toBeInTheDocument();
     });
   });

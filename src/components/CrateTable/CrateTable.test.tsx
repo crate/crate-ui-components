@@ -1,8 +1,5 @@
 import { render, screen, waitFor } from '../../../test/testUtils';
 import CrateTable, { CrateTableProps } from './CrateTable';
-import rootMessages from '../../rootMessages';
-
-const messages = rootMessages.en;
 
 type DataType = {
   name: string;
@@ -67,9 +64,7 @@ describe('The CrateTable component', () => {
   it('displays the default empty text if there is an empty list as data source and no empty text', () => {
     setup({ dataSource: [], emptyText: undefined });
 
-    expect(
-      screen.getAllByText(messages['crateTable.defaultEmptyText']),
-    ).toHaveLength(2);
+    expect(screen.getAllByText('No data')).toHaveLength(2);
   });
 
   it('displays an expand icon', () => {

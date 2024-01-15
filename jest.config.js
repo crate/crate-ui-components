@@ -29,10 +29,7 @@ export default {
     '^.+\\.jsx?$': 'ts-jest',
     '^.+\\.tsx?$': 'ts-jest',
   },
-  transformIgnorePatterns: [
-    '/node_modules/(?!intl-messageformat|intl-messageformat-parser).+\\.js$',
-    'node_modules/(?!troublesome-dependency/.*)',
-  ],
+  transformIgnorePatterns: ['node_modules/(?!troublesome-dependency/.*)'],
   setupFilesAfterEnv: ['<rootDir>/test/setup.ts'],
   globalSetup: './test/global-setup.ts',
 };

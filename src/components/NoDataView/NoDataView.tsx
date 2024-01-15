@@ -1,5 +1,4 @@
 import React, { PropsWithChildren } from 'react';
-import { FormattedMessage } from 'react-intl';
 import Text from '../Text';
 
 export type NoDataViewProps = PropsWithChildren<{
@@ -8,7 +7,7 @@ export type NoDataViewProps = PropsWithChildren<{
 }>;
 
 function NoDataView({
-  description = <FormattedMessage id="noDataView.defaultText" />,
+  description = 'There is currently no data to display',
   imageSrc,
   children,
 }: NoDataViewProps) {
