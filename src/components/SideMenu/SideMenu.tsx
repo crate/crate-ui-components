@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { Layout } from 'antd';
 import {
@@ -81,13 +80,5 @@ function SideMenu({
     </Layout.Sider>
   );
 }
-
-SideMenu.propTypes = {
-  organizationId: PropTypes.string,
-};
-
-SideMenu.defaultProps = {
-  organizationId: null,
-};
 
 export default SideMenu;
