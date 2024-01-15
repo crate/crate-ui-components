@@ -20,7 +20,7 @@ const render = (
 };
 
 // re-export everything
-export * from '@testing-library/react';
+export { screen, waitFor, within } from '@testing-library/react';
 
 // override render method
 export { render };

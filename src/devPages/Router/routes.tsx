@@ -2,6 +2,7 @@ import App from '../App';
 import { ApartmentOutlined } from '@ant-design/icons';
 import {
   ButtonPage,
+  ConfirmDeletePage,
   HeadingsPage,
   LoadersPage,
   NoDataViewsPage,
@@ -65,5 +66,11 @@ export const devRoutes: DevRoute[] = [
     component: <TextsPage />,
     icon: <ApartmentOutlined />,
     displayName: 'Texts',
+  },
+  {
+    path: '/confirm-delete',
+    component: <ConfirmDeletePage />,
+    icon: <ApartmentOutlined />,
+    displayName: 'Confirm Delete Page',
   },
 ];

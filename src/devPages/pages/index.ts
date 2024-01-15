@@ -1,4 +1,5 @@
 export { default as ButtonPage } from './ButtonPage';
+export { default as ConfirmDeletePage } from './ConfirmDeletePage';
 export { default as HeadingsPage } from './HeadingsPage';
 export { default as LoadersPage } from './LoadersPage';
 export { default as NoDataViewsPage } from './NoDataViewsPage';

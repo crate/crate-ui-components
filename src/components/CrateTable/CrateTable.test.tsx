@@ -85,7 +85,7 @@ describe('The CrateTable component', () => {
         },
       });
 
-      user.click(screen.getAllByText('+')[0]);
+      await user.click(screen.getAllByText('+')[0]);
 
       await waitFor(() => {
         expect(screen.getByTestId('expanded-row')).toBeInTheDocument();
@@ -99,7 +99,7 @@ describe('The CrateTable component', () => {
         },
       });
 
-      user.click(screen.getAllByText('+')[0]);
+      await user.click(screen.getAllByText('+')[0]);
 
       await waitFor(() => {
         expect(screen.getByText('−')).toBeInTheDocument();

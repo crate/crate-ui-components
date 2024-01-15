@@ -26,7 +26,7 @@ describe('The MenuCollapseToggle component', () => {
   it('displays a button that toggles the sidemenu when clicked', async () => {
     const { user } = setup();
     const toggleButton = screen.getByRole('menu').children[0];
-    user.click(toggleButton);
+    await user.click(toggleButton);
 
     await waitFor(() => {
       expect(toggleSideMenuSpy).toHaveBeenCalled();

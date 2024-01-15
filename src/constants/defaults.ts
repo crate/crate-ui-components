@@ -10,3 +10,6 @@ export const ANTD_THEME_PRESET: MenuTheme = 'dark';
 export const SIDE_MENU_EXPANDED_WIDTH = 224;
 export const SIDE_MENU_TOGGLE_DISABLED_THRESHOLD = 500;
 export const SIDE_MENU_COLLAPSED_WIDTH = 80;
+
+// ant design messages
+export const TOAST_NOTIFICATION_DURATION = 8; // in seconds
