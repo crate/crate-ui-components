@@ -63,7 +63,7 @@ describe('The SideMenu component', () => {
     it('collapses the sidemenu when the collapse button is clicked', async () => {
       const { user } = setup();
 
-      user.click(screen.getByTestId('collapse-menu-toggle').children[0]);
+      await user.click(screen.getByTestId('collapse-menu-toggle').children[0]);
 
       expect(await screen.findByTestId('side-menu-collapsed')).toBeInTheDocument();
     });
