@@ -11,3 +11,4 @@ export { default as SideMenu } from './SideMenu';
 export { default as SubmitButtonGroup } from './SubmitButtonGroup';
 export { default as Text } from './Text';
 export { default as TopBar } from './TopBar';
+export { default as StatusLight } from './StatusLight'
