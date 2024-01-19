@@ -34,7 +34,7 @@
   "scripts": {
     "start": "vite",
     "build": "tsc && vite build",
-    "prepare": "yarn run build",
+    "prepack": "yarn run build",
     "test": "jest",
     "lint": "eslint --ext=.ts --ext=.tsx src/",
     "link-local": "yarn link && cd node_modules/react && yarn link && cd ../react-dom && yarn link",
