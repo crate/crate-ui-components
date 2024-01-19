@@ -4,11 +4,13 @@ export { default as CopyToClipboard } from './CopyToClipboard';
 export { default as CrateTable } from './CrateTable';
 export { default as CrateTabs } from './CrateTabs';
 export { default as DisplayDate } from './DisplayDate';
+export { default as InfoModal } from './InfoModal';
 export { default as Heading } from './Heading';
 export { default as Loader } from './Loader';
 export { default as NoDataView } from './NoDataView';
+export { default as RoundedIcon } from './RoundedIcon';
 export { default as SideMenu } from './SideMenu';
 export { default as SubmitButtonGroup } from './SubmitButtonGroup';
 export { default as Text } from './Text';
 export { default as TopBar } from './TopBar';
-export { default as StatusLight } from './StatusLight'
+export { default as StatusLight } from './StatusLight';
