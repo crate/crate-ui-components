@@ -1,6 +1,6 @@
 {
   "name": "@crate.io/crate-ui-components",
-  "version": "0.1.29",
+  "version": "0.1.30",
   "author": "crate.io",
   "private": false,
   "type": "module",
