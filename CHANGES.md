@@ -2,8 +2,10 @@
 
 ## Unreleased
 
+## 2024-01-15 - v0.1.30
+
 - Initial version
-- Added 
+- Added the StatusLight component
 
 ## 2024-01-15 - v0.1.28
 
