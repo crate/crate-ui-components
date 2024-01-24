@@ -38,7 +38,7 @@ function Layout({
             gcStatus={gcStatus}
           />
         </div>
-        <div className="flex-basis overflow-y-auto">{children}</div>
+        <div className="basis-full overflow-y-auto">{children}</div>
       </div>
     </div>
   );

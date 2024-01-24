@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## 2024-01-24 - v0.1.33
+
+- Fixed problem with main container width
+
 ## 2024-01-24 - v0.1.32
 
 - Added new `Layout` component
