@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Added new `Layout` component
+
 ## 2024-01-15 - v0.1.31
 
 - Added the `InfoModal` component
