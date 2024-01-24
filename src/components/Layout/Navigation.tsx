@@ -75,7 +75,7 @@ function Navigation({
       case ConnectionStatus.ERROR:
         classes = 'bg-red-700 text-white';
         icon = <WarningOutlined />;
-        label = 'Error';
+        label = 'Not available';
         break;
       case ConnectionStatus.PENDING:
         classes = 'bg-neutral-700 text-white';
